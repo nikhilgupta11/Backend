@@ -1,0 +1,5 @@
+a=str(input("enter your string = "))
+b=str(input("enter your sub string = "))
+# print(b)
+# print(a)
+print(a.count(b))

@@ -1,0 +1,406 @@
+nikhil@nikhil-Lenovo-E41-15:~$ mongo
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+Implicit session: session { "id" : UUID("05aa596b-1a8f-48c6-bbb5-8ca394dc4013") }
+MongoDB server version: 3.6.8
+Server has startup warnings: 
+2021-12-28T13:14:16.740+0530 I STORAGE  [initandlisten] 
+2021-12-28T13:14:16.740+0530 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2021-12-28T13:14:16.740+0530 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2021-12-28T13:14:19.427+0530 I CONTROL  [initandlisten] 
+2021-12-28T13:14:19.427+0530 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2021-12-28T13:14:19.427+0530 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2021-12-28T13:14:19.427+0530 I CONTROL  [initandlisten] 
+> 
+[1]+  Stopped                 mongo
+nikhil@nikhil-Lenovo-E41-15:~$ sudo service mongodb start
+[sudo] password for nikhil: 
+nikhil@nikhil-Lenovo-E41-15:~$ mongo
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+Implicit session: session { "id" : UUID("970fbe03-58d2-4618-bcdc-a96c98d38da8") }
+MongoDB server version: 3.6.8
+Server has startup warnings: 
+2021-12-28T13:14:16.740+0530 I STORAGE  [initandlisten] 
+2021-12-28T13:14:16.740+0530 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2021-12-28T13:14:16.740+0530 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2021-12-28T13:14:19.427+0530 I CONTROL  [initandlisten] 
+2021-12-28T13:14:19.427+0530 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2021-12-28T13:14:19.427+0530 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2021-12-28T13:14:19.427+0530 I CONTROL  [initandlisten] 
+> use md1
+switched to db md1
+> show collections
+mt1
+> db.mt1.find()
+{ "_id" : ObjectId("61cac2207bef1e21f2886ffb"), "name" : "Nikhil", "lang" : "python", "exp." : "5", "salary" : "450000", "city" : "jaipur" }
+{ "_id" : ObjectId("61cac4bf7bef1e21f2886ffc"), "name" : "Atul" }
+{ "_id" : ObjectId("61cac55e7bef1e21f2886ffd"), "name" : "Atul" }
+> db.mt1.insert({'name': 'Nikhil', 'lang': 'java', 'exp.': '3', 'salary': '3000'', 'city': 'jpdhpur'})
+2021-12-28T13:51:53.648+0530 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:78
+> db.mt1.insert({'name': 'Nikhil', 'lang': 'java', 'exp.': '3', 'salary': '3000', 'city': 'jpdhpur'})
+WriteResult({ "nInserted" : 1 })
+> db.mt1.insert({'name': 'Nikhil', 'lang': 'java', 'exp.': '3', 'salary': 43000', 'city': 'mumbai'})
+2021-12-28T13:52:32.440+0530 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:77
+> db.mt1.insert({'name': 'Nikhil', 'lang': 'java', 'exp.': '3', 'salary': '43000', 'city': 'mumbai'})
+WriteResult({ "nInserted" : 1 })
+> db.mt1.insert({'name': 'Nikhil', 'lang': 'java', 'exp.': '3', 'salary': '43000', 'city': 'mumbai'})
+WriteResult({ "nInserted" : 1 })
+> db.mt1.insert({'name': 'Atul', 'lang': 'java', 'exp.': '3', 'salary': '43000', 'city': 'pune'})
+WriteResult({ "nInserted" : 1 })
+> db.mt1.insert({'name': 'Aram', 'lang': 'html', 'exp.': '3', 'salary': '43000', 'city': 'pune'})
+WriteResult({ "nInserted" : 1 })
+> db.mt1.insert({'name': 'Aram', 'lang': 'html', 'exp.': '3', 'salary': '43000', db.mt1.insert({'name': 'Nikhil', 'lang': 'java', 'exp.': '3', 'salary': '3000', 'city': 'jpdhpur'})
+Wr},
+2021-12-28T13:56:09.351+0530 E QUERY    [thread1] SyntaxError: expected expression, got '}' @(shell):1:0
+> db.mt2.insert({'name': 'Aditya', 'fname': 'jyanti', 'age': '3', 'income': '303300', 'city': 'jpdhpur'})
+WriteResult({ "nInserted" : 1 })
+> db.mt2.insert({'name': 'Rohan', 'fname': 'jyanti', 'age': '38', 'income': '30330', 'city': 'bundi'})
+WriteResult({ "nInserted" : 1 })
+> db.mt2.insert({'name': 'gulati', 'fname': 'mashoor', 'age': '38', 'income': '303330', 'city': 'aloda'})
+WriteResult({ "nInserted" : 1 })
+> db.mt2.insert({'name': 'kapil', 'fname': 'malik', 'age': '68', 'income': '303330', 'city': 'aloda'})
+WriteResult({ "nInserted" : 1 })
+> db.mt2.insert({'name': 'taarak', 'fname': 'malik', 'age': '68', 'income': '303330', 'city': 'aloda'})
+WriteResult({ "nInserted" : 1 })
+> db.mt2.insert({'name': 'jetha', 'fname': 'chamapk', 'age': '68', 'income': '303330', 'city': 'kachh'})
+WriteResult({ "nInserted" : 1 })
+> db.mt2.insert({'name': 'ayyer', 'fname': 'chamapk', 'age': '45', 'income': '303330', 'city': 'gujrat'})
+WriteResult({ "nInserted" : 1 })
+> db.mt2.find()
+{ "_id" : ObjectId("61caca8bea6de9bb4b3478d1"), "name" : "Aditya", "fname" : "jyanti", "age" : "3", "income" : "303300", "city" : "jpdhpur" }
+{ "_id" : ObjectId("61cacabbea6de9bb4b3478d2"), "name" : "Rohan", "fname" : "jyanti", "age" : "38", "income" : "30330", "city" : "bundi" }
+{ "_id" : ObjectId("61cacad4ea6de9bb4b3478d3"), "name" : "gulati", "fname" : "mashoor", "age" : "38", "income" : "303330", "city" : "aloda" }
+{ "_id" : ObjectId("61cacae8ea6de9bb4b3478d4"), "name" : "kapil", "fname" : "malik", "age" : "68", "income" : "303330", "city" : "aloda" }
+{ "_id" : ObjectId("61cacaf3ea6de9bb4b3478d5"), "name" : "taarak", "fname" : "malik", "age" : "68", "income" : "303330", "city" : "aloda" }
+{ "_id" : ObjectId("61cacb0cea6de9bb4b3478d6"), "name" : "jetha", "fname" : "chamapk", "age" : "68", "income" : "303330", "city" : "kachh" }
+{ "_id" : ObjectId("61cacb20ea6de9bb4b3478d7"), "name" : "ayyer", "fname" : "chamapk", "age" : "45", "income" : "303330", "city" : "gujrat" }
+> db.mt2.insert({'name': 'shodi', 'fname': 'goli', 'age': '45', 'income': '303330', 'city': 'punjab'})
+WriteResult({ "nInserted" : 1 })
+> db.mt2.insert({'name': 'shodi', 'fname': 'goli', 'age': '45', 'income': '303330', 'city': 'punjab'})
+WriteResult({ "nInserted" : 1 })
+> db.mt2.insert({'name': 'roshan', 'fname': 'goli', 'age': '43', 'income': '303330', 'city': 'house'})
+WriteResult({ "nInserted" : 1 })
+> db.mt2.find()
+{ "_id" : ObjectId("61caca8bea6de9bb4b3478d1"), "name" : "Aditya", "fname" : "jyanti", "age" : "3", "income" : "303300", "city" : "jpdhpur" }
+{ "_id" : ObjectId("61cacabbea6de9bb4b3478d2"), "name" : "Rohan", "fname" : "jyanti", "age" : "38", "income" : "30330", "city" : "bundi" }
+{ "_id" : ObjectId("61cacad4ea6de9bb4b3478d3"), "name" : "gulati", "fname" : "mashoor", "age" : "38", "income" : "303330", "city" : "aloda" }
+{ "_id" : ObjectId("61cacae8ea6de9bb4b3478d4"), "name" : "kapil", "fname" : "malik", "age" : "68", "income" : "303330", "city" : "aloda" }
+{ "_id" : ObjectId("61cacaf3ea6de9bb4b3478d5"), "name" : "taarak", "fname" : "malik", "age" : "68", "income" : "303330", "city" : "aloda" }
+{ "_id" : ObjectId("61cacb0cea6de9bb4b3478d6"), "name" : "jetha", "fname" : "chamapk", "age" : "68", "income" : "303330", "city" : "kachh" }
+{ "_id" : ObjectId("61cacb20ea6de9bb4b3478d7"), "name" : "ayyer", "fname" : "chamapk", "age" : "45", "income" : "303330", "city" : "gujrat" }
+{ "_id" : ObjectId("61cacb75ea6de9bb4b3478d8"), "name" : "shodi", "fname" : "goli", "age" : "45", "income" : "303330", "city" : "punjab" }
+{ "_id" : ObjectId("61cacb77ea6de9bb4b3478d9"), "name" : "shodi", "fname" : "goli", "age" : "45", "income" : "303330", "city" : "punjab" }
+{ "_id" : ObjectId("61cacb90ea6de9bb4b3478da"), "name" : "roshan", "fname" : "goli", "age" : "43", "income" : "303330", "city" : "house" }
+> db.mt3.insert({'firstname': 'vinod', 'lastname': 'mashoor', 'roll.no': '2','age': '13',  'city': 'jaipur'})
+WriteResult({ "nInserted" : 1 })
+> db.mt3.insert({'firstname': 'raj', 'lastname': 'kapoor', 'roll.no': '3','age': '16',  'city': 'udiapur'})
+WriteResult({ "nInserted" : 1 })
+> db.mt3.insert({'firstname': 'mukesh', 'lastname': 'khan', 'roll.no': '12','age': '76',  'city': 'dausa'})
+WriteResult({ "nInserted" : 1 })
+> db.mt3.insert({'firstname': 'mukesh', 'lastname': 'khan', 'roll.no': '12','age': '76',  'city': 'dausa'})
+WriteResult({ "nInserted" : 1 })
+> db.mt3.insert({'firstname': 'mukesh', 'lastname': 'khan', 'roll.no': '12','age': '76',  'city': 'bihar13'})
+[2]+  Stopped                 mongo
+nikhil@nikhil-Lenovo-E41-15:~$ mongo
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+Implicit session: session { "id" : UUID("a7a82a44-07a6-4666-9796-eb7a84027eb8") }
+MongoDB server version: 3.6.8
+Server has startup warnings: 
+2021-12-28T13:14:16.740+0530 I STORAGE  [initandlisten] 
+2021-12-28T13:14:16.740+0530 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2021-12-28T13:14:16.740+0530 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2021-12-28T13:14:19.427+0530 I CONTROL  [initandlisten] 
+2021-12-28T13:14:19.427+0530 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2021-12-28T13:14:19.427+0530 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2021-12-28T13:14:19.427+0530 I CONTROL  [initandlisten] 
+> use md1
+switched to db md1
+> db show collections
+2021-12-28T15:20:55.556+0530 E QUERY    [thread1] SyntaxError: missing ; before statement @(shell):1:3
+> db.show collections
+2021-12-28T15:21:01.384+0530 E QUERY    [thread1] SyntaxError: missing ; before statement @(shell):1:8
+> show collections
+mt1
+mt2
+mt3
+> use mt3
+switched to db mt3
+> db.mt3.find()
+> show db
+2021-12-28T15:22:22.091+0530 E QUERY    [thread1] Error: don't know how to show [db] :
+shellHelper.show@src/mongo/shell/utils.js:997:11
+shellHelper@src/mongo/shell/utils.js:750:15
+@(shellhelp2):1:1
+> use md1
+switched to db md1
+> show collections
+mt1
+mt2
+mt3
+> db.mt2.find()
+{ "_id" : ObjectId("61caca8bea6de9bb4b3478d1"), "name" : "Aditya", "fname" : "jyanti", "age" : "3", "income" : "303300", "city" : "jpdhpur" }
+{ "_id" : ObjectId("61cacabbea6de9bb4b3478d2"), "name" : "Rohan", "fname" : "jyanti", "age" : "38", "income" : "30330", "city" : "bundi" }
+{ "_id" : ObjectId("61cacad4ea6de9bb4b3478d3"), "name" : "gulati", "fname" : "mashoor", "age" : "38", "income" : "303330", "city" : "aloda" }
+{ "_id" : ObjectId("61cacae8ea6de9bb4b3478d4"), "name" : "kapil", "fname" : "malik", "age" : "68", "income" : "303330", "city" : "aloda" }
+{ "_id" : ObjectId("61cacaf3ea6de9bb4b3478d5"), "name" : "taarak", "fname" : "malik", "age" : "68", "income" : "303330", "city" : "aloda" }
+{ "_id" : ObjectId("61cacb0cea6de9bb4b3478d6"), "name" : "jetha", "fname" : "chamapk", "age" : "68", "income" : "303330", "city" : "kachh" }
+{ "_id" : ObjectId("61cacb20ea6de9bb4b3478d7"), "name" : "ayyer", "fname" : "chamapk", "age" : "45", "income" : "303330", "city" : "gujrat" }
+{ "_id" : ObjectId("61cacb75ea6de9bb4b3478d8"), "name" : "shodi", "fname" : "goli", "age" : "45", "income" : "303330", "city" : "punjab" }
+{ "_id" : ObjectId("61cacb77ea6de9bb4b3478d9"), "name" : "shodi", "fname" : "goli", "age" : "45", "income" : "303330", "city" : "punjab" }
+{ "_id" : ObjectId("61cacb90ea6de9bb4b3478da"), "name" : "roshan", "fname" : "goli", "age" : "43", "income" : "303330", "city" : "house" }
+> db.mt3.insert({'firstname': 'mukesh', 'lastname': 'khan', 'roll.no': '12','age': '76',  'city': 'dausa'})
+WriteResult({ "nInserted" : 1 })
+> db.mt3.insert({'firstname': 'irfan', 'lastname': 'khan', 'roll.no': '12','age': '65',  'city': 'rajdhani'})
+WriteResult({ "nInserted" : 1 })
+> db.mt3.insert({'firstname': 'mohmmad', 'lastname': 'khan', 'roll.no': '12','age': '65',  'city': 'ramganj'})
+WriteResult({ "nInserted" : 1 })
+> db.mt3.insert({'firstname': 'munaf', 'lastname': 'asif', 'roll.no': '22','age': '32',  'city': 'mandi'})
+WriteResult({ "nInserted" : 1 })
+> db.mt3.insert({'firstname': 'makbool', 'lastname': 'asif', 'roll.no': '22','age': '32',  'city': 'mandi'})
+WriteResult({ "nInserted" : 1 })
+> db.mt3.insert({'firstname': 'rohan', 'lastname': 'khan', 'roll.no': '45','age': '44',  'city': 'kasganj'})
+WriteResult({ "nInserted" : 1 })
+> db.mt3.insert({'firstname': 'rohan', 'lastname': 'khan', 'roll.no': '45','age': '44',  'city': 'kasganj'})
+WriteResult({ "nInserted" : 1 })
+> db.mt3.insert({'firstname': 'mukesh', 'lastname': 'pandit', 'roll.no': '78','age': '90',  'city': 'mathura'})
+WriteResult({ "nInserted" : 1 })
+> db.mt3.find()
+{ "_id" : ObjectId("61cadd76ea6de9bb4b3478db"), "firstname" : "vinod", "lastname" : "mashoor", "roll.no" : "2", "age" : "13", "city" : "jaipur" }
+{ "_id" : ObjectId("61cadd88ea6de9bb4b3478dc"), "firstname" : "raj", "lastname" : "kapoor", "roll.no" : "3", "age" : "16", "city" : "udiapur" }
+{ "_id" : ObjectId("61cadd94ea6de9bb4b3478dd"), "firstname" : "mukesh", "lastname" : "khan", "roll.no" : "12", "age" : "76", "city" : "dausa" }
+{ "_id" : ObjectId("61cadda5ea6de9bb4b3478de"), "firstname" : "mukesh", "lastname" : "khan", "roll.no" : "12", "age" : "76", "city" : "dausa" }
+{ "_id" : ObjectId("61cadee695789e30ae8f79b9"), "firstname" : "mukesh", "lastname" : "khan", "roll.no" : "12", "age" : "76", "city" : "dausa" }
+{ "_id" : ObjectId("61cadf0295789e30ae8f79ba"), "firstname" : "irfan", "lastname" : "khan", "roll.no" : "12", "age" : "65", "city" : "rajdhani" }
+{ "_id" : ObjectId("61cadf1a95789e30ae8f79bb"), "firstname" : "mohmmad", "lastname" : "khan", "roll.no" : "12", "age" : "65", "city" : "ramganj" }
+{ "_id" : ObjectId("61cadf3c95789e30ae8f79bc"), "firstname" : "munaf", "lastname" : "asif", "roll.no" : "22", "age" : "32", "city" : "mandi" }
+{ "_id" : ObjectId("61cadf4795789e30ae8f79bd"), "firstname" : "makbool", "lastname" : "asif", "roll.no" : "22", "age" : "32", "city" : "mandi" }
+{ "_id" : ObjectId("61cadf6c95789e30ae8f79be"), "firstname" : "rohan", "lastname" : "khan", "roll.no" : "45", "age" : "44", "city" : "kasganj" }
+{ "_id" : ObjectId("61cadf7095789e30ae8f79bf"), "firstname" : "rohan", "lastnamdb.mt3.find()
+{ "_id" : ObjectId("61cadd76ea6de9bb4b3478db"), "firstname" : "vinod", "lastname" : "mashoor", "roll.no" : "2", "age" : "13", "city" : "jaipur" }
+{ "_id" : ObjectId("61cadd88ea6de9bb4b3478dc"), "firstname" : "raj", "lastname" : "kapoor", "roll.no" : "3", "age" : "16", "city" : "udiapur" }
+{ "_id" : ObjectId("61cadd94ea6de9bb4b3478dd"), "firstname" : "mukesh", "lastname" : "khan", "roll.no" : "12", "age" : "76", "city" : "dausa" }
+{ "_id" : ObjectId("61cadda5ea6de9bb4b3478de"), "firstname" : "mukesh", "lastname" : "khan", "roll.no" : "12", "age" : "76", "city" : "dausa" }
+{ "_id" : ObjectId("61cadee695789e30ae8f79b9"), "firstname" : "mukesh", "lastname" : "khan", "roll.no" : "12", "age" : "76", "city" : "dausa" }
+{ "_id" : ObjectId("61cadf0295789e30ae8f79ba"), "firstname" : "irfan", "lastname" : "khan", "roll.no" : "12", "age" : "65", "city" : "rajdhani" }
+{ "_id" : ObjectId("61cadf1a95789e30ae8f79bb"), "firstname" : "mohmmad", "lastname" : "khan", "roll.no" : "12", "age" : "65", "city" : "ramganj" }
+{ "_id" : ObjectId("61cadf3c95789e30ae8f79bc"), "firstname" : "munaf", "lastname" : "asif", "roll.no" : "22", "age" : "32", "city" : "mandi" }
+{ "_id" : ObjectId("61cadf4795789e30ae8f79bd"), "firstname" : "makbool", "lastname" : "asif", "roll.no" : "22", "age" : "32", "city" : "mandi" }
+{ "_id" : ObjectId("61cadf6c95789e30ae8f79be"), "firstname" : "rohan", "lastname" : "khan", "roll.no" : "45", "age" : "44", "city" : "kasganj" }
+{ "_id" : ObjectId("61cadf7095789e30ae8f79bf"), "firstname" : "rohan", "lastname" : "khan", "roll.no" : "45", "age" : "44", "city" : "kasganj" }
+{ "_id" : ObjectId("61cadf9b95789e30ae8f79c0"), "firstname" : "mukesh", "lastname" : "pandit", "roll.no" : "78", "age" : "90", "city" : "mathura" }
+> db.mt4.insert({'name': 'mukesh', 'fname': 'pandit', 'sex': '78','age': '90',  'mob.bo': '898978786'})
+WriteResult({ "nInserted" : 1 })
+> db.mt4.insert({'name': 'mukul', 'fname': 'maharaj', 'sex': 'm','age': '50',  'mob.bo': '898974254'})
+WriteResult({ "nInserted" : 1 })
+> db.mt4.insert({'name': 'kumar', 'fname': 'ashok', 'sex': 'm','age': '60',  'mob.bo': '89232354'})
+WriteResult({ "nInserted" : 1 })
+> db.mt4.insert({'name': 'rani', 'fname': 'ashok', 'sex': 'f','age': '43',  'mob.bo': '342525434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt4.insert({'name': 'usha', 'fname': 'ashok', 'sex': 'f','age': '32',  'mob.bo': '342978978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt4.insert({'name': 'usha', 'fname': 'ashok', 'sex': 'f','age': '32',  'mob.bo': '342978978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt4.insert({'name': 'priyanka', 'fname': 'raju', 'sex': 'm','age': '13',  'mob.bo': '34297886989'})
+WriteResult({ "nInserted" : 1 })
+> db.mt4.insert({'name': 'mohan', 'fname': 'raju', 'sex': 'm','age': '13',  'mob.bo': '34297886989'})
+WriteResult({ "nInserted" : 1 })
+> db.mt4.insert({'name': 'mokund', 'fname': 'ramlal', 'sex': 'f','age': '13',  'mob.bo': '34297886989'})
+WriteResult({ "nInserted" : 1 })
+> db.mt4.insert({'name': 'usha', 'fname': 'ashok', 'sex': 'f','age': '32',  'mob.bo': '342978978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt4.find()
+{ "_id" : ObjectId("61cae00295789e30ae8f79c1"), "name" : "mukesh", "fname" : "pandit", "sex" : "78", "age" : "90", "mob.bo" : "898978786" }
+{ "_id" : ObjectId("61cae02295789e30ae8f79c2"), "name" : "mukul", "fname" : "maharaj", "sex" : "m", "age" : "50", "mob.bo" : "898974254" }
+{ "_id" : ObjectId("61cae03895789e30ae8f79c3"), "name" : "kumar", "fname" : "ashok", "sex" : "m", "age" : "60", "mob.bo" : "89232354" }
+{ "_id" : ObjectId("61cae05095789e30ae8f79c4"), "name" : "rani", "fname" : "ashok", "sex" : "f", "age" : "43", "mob.bo" : "342525434" }
+{ "_id" : ObjectId("61cae06295789e30ae8f79c5"), "name" : "usha", "fname" : "ashok", "sex" : "f", "age" : "32", "mob.bo" : "342978978434" }
+{ "_id" : ObjectId("61cae06395789e30ae8f79c6"), "name" : "usha", "fname" : "ashok", "sex" : "f", "age" : "32", "mob.bo" : "342978978434" }
+{ "_id" : ObjectId("61cae08095789e30ae8f79c7"), "name" : "priyanka", "fname" : "raju", "sex" : "m", "age" : "13", "mob.bo" : "34297886989" }
+{ "_id" : ObjectId("61cae08a95789e30ae8f79c8"), "name" : "mohan", "fname" : "raju", "sex" : "m", "age" : "13", "mob.bo" : "34297886989" }
+{ "_id" : ObjectId("61cae09d95789e30ae8f79c9"), "name" : "mokund", "fname" : "db.mt4.insert({'name': 'usha', 'fname': 'ashok', 'sex': 'f','age': '32',  'mob.bo': '342978978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt5.insert({'name': 'jay', 'fname': 'ashok', 'policy': 'jaijawan','age': '32',  'mob.bo': '342978978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt5.insert({'name': 'vinod', 'fname': 'ramesh', 'policy': 'jaikisan','age': '45',  'mob.bo': '3429700034'})
+WriteResult({ "nInserted" : 1 })
+> db.mt5.insert({'name': 'rajulal', 'fname': 'ramesh', 'policy': 'jaikisanjaijawan','age': '90',  'mob.bo': '3429700034'})
+WriteResult({ "nInserted" : 1 })
+> db.mt5.insert({'name': 'priya', 'fname': 'foolchand', 'policy': 'sukanya','age': '20',  'mob.bo': '34u878784'})
+WriteResult({ "nInserted" : 1 })
+> db.mt5.insert({'name': 'vinod', 'fname': 'ramesh', 'policy': 'jaikisan','age': '45',  'mob.bo': '3429700034'})
+WriteResult({ "nInserted" : 1 })
+> db.mt5.insert({'name': 'supriya', 'fname': 'ramchand', 'policy': 'sukanya','age': '20',  'mob.bo': '34u878784'})
+WriteResult({ "nInserted" : 1 })
+> db.mt5.insert({'name': 'Apriya', 'fname': 'khemchand', 'policy': 'sukanya','age': '20',  'mob.bo': '34u878784'})
+WriteResult({ "nInserted" : 1 })
+> db.mt5.insert({'name': 'jipriya', 'fname': 'birdichand', 'policy': 'sukanya sahi','age': '10',  'mob.bo': '3989878784'})
+WriteResult({ "nInserted" : 1 })
+> db.mt5.insert({'name': 'rajulal', 'fname': 'ramesh', 'policy': 'jaikisanjaijawan','age': '90',  'mob.bo': '3429700034'})
+WriteResult({ "nInserted" : 1 })
+> db.mt5.insert({'name': 'jay', 'fname': 'ashok', 'policy': 'jaijawan','age': '32',  'mob.bo': '342978978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt5.find()
+{ "_id" : ObjectId("61cae0e495789e30ae8f79cc"), "name" : "jay", "fname" : "ashok", "policy" : "jaijawan", "age" : "32", "mob.bo" : "342978978434" }
+{ "_id" : ObjectId("61cae0ff95789e30ae8f79cd"), "name" : "vinod", "fname" : "ramesh", "policy" : "jaikisan", "age" : "45", "mob.bo" : "3429700034" }
+{ "_id" : ObjectId("61cae11a95789e30ae8f79ce"), "name" : "rajulal", "fname" : "ramesh", "policy" : "jaikisanjaijawan", "age" : "90", "mob.bo" : "3429700034" }
+{ "_id" : ObjectId("61cae14395789e30ae8f79cf"), "name" : "priya", "fname" : "foolchand", "policy" : "sukanya", "age" : "20", "mob.bo" : "34u878784" }
+{ "_id" : ObjectId("61cae14595789e30ae8f79d0"), "name" : "vinod", "fname" : "ramesh", "policy" : "jaikisan", "age" : "45", "mob.bo" : "3429700034" }
+{ "_id" : ObjectId("61cae16195789e30ae8f79d1"), "name" : "supriya", "fname" : "ramchand", "policy" : "sukanya", "age" : "20", "mob.bo" : "34u878784" }
+{ "_id" : ObjectId("61cae17295789e30ae8f79d2"), "name" : "Apriya", "fname" : "khemchand", "policy" : "sukanya", "age" : "20", "mob.bo" : "34u878784" }
+{ "_id" : ObjectId("61cae19495789e30ae8f79d3"), "name" : "jipriya", "fname" : "birdichand", "policy" : "sukanya sahi", "age" : "10", "mob.bo" : "3989878784" }
+{ "_id" : ObjectId("61cae19795789e30ae8f79d4"), "name" : "rajulal", "fname" : "ramesh", "policy" : "jaikisanjaijawan", "age" : "90", "mob.bo" : "3429700034" }
+{ "_id" : ObjectId("61cae19b95789e30ae8f79d5"), "name" : "jay", "fname" : "ashok", "policy" : "jaijawan", "age" : "32", "mob.bo" : "342978978434" }
+> 
+> db.mt6.insert({'id': '1', 'sname': 'ashok', 'fname': 'jailal','roll.no': '32',  'mob.bo': '342978978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt6.insert({'id': '2', 'sname': 'mahak', 'fname': 'mohanal','roll.no': '12',  'mob.bo': '99998978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt6.insert({'id': '3', 'sname': 'mini', 'fname': 'babulal','roll.no': '65',  'mob.bo':'9800978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt6.insert({'id': '4', 'sname': 'kapil', 'fname': 'babulal','roll.no': '65',  'mob.bo':'9800978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt6.insert({'id': '2', 'sname': 'mahak', 'fname': 'mohanal','roll.no': '12',  'mob.bo': '99998978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt6.insert({'id': '5', 'sname': 'akar', 'fname': 'monu','roll.no': '89',  'mob.bo': '99998978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt6.insert({'id': '5', 'sname': 'akar', 'fname': 'monu','roll.no': '89',  'mob.bo': '99998978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt6.insert({'id': '6', 'sname': 'vikar', 'fname': 'vikral','roll.no': '78',  'mob.bo': '90008978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt6.insert({'id': '1', 'sname': 'ashok', 'fname': 'jailal','roll.no': '32',  'mob.bo': '342978978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt6.insert({'id': '7', 'sname': 'vdroh', 'fname': 'gandial','roll.no': '98',  'mob.bo': '0078978434'})
+WriteResult({ "nInserted" : 1 })
+> 
+> db.mt6.find()
+{ "_id" : ObjectId("61cae1f495789e30ae8f79d6"), "id" : "1", "sname" : "ashok", "fname" : "jailal", "roll.no" : "32", "mob.bo" : "342978978434" }
+{ "_id" : ObjectId("61cae21495789e30ae8f79d7"), "id" : "2", "sname" : "mahak", "fname" : "mohanal", "roll.no" : "12", "mob.bo" : "99998978434" }
+{ "_id" : ObjectId("61cae24d95789e30ae8f79d8"), "id" : "3", "sname" : "mini", "fname" : "babulal", "roll.no" : "65", "mob.bo" : "9800978434" }
+{ "_id" : ObjectId("61cae25b95789e30ae8f79d9"), "id" : "4", "sname" : "kapil", "fname" : "babulal", "roll.no" : "65", "mob.bo" : "9800978434" }
+{ "_id" : ObjectId("61cae25d95789e30ae8f79da"), "id" : "2", "sname" : "mahak", "fname" : "mohanal", "roll.no" : "12", "mob.bo" : "99998978434" }
+{ "_id" : ObjectId("61cae28495789e30ae8f79db"), "id" : "5", "sname" : "akar", "fname" : "monu", "roll.no" : "89", "mob.bo" : "99998978434" }
+{ "_id" : ObjectId("61cae28695789e30ae8f79dc"), "id" : "5", "sname" : "akar", "fname" : "monu", "roll.no" : "89", "mob.bo" : "99998978434" }
+{ "_id" : ObjectId("61cae2a695789e30ae8f79dd"), "id" : "6", "sname" : "vikar", "fname" : "vikral", "roll.no" : "78", "mob.bo" : "90008978434" }
+{ "_id" : ObjectId("61cae2b695789e30ae8f79de"), "id" : "1", "sname" : "ashok", "fname" : "jailal", "roll.no" : "32", "mob.bo" : "342978978434" }
+{ "_id" : ObjectId("61cae2d695789e30ae8f79df"), "id" : "7", "sname" : "vdroh", "fname" : "gandial", "roll.no" : "98", "mob.bo" : "0078978434" }
+> db.mt7.insert({'s_id': '1', 'sname': 'virodh', 'fname': 'gandhi','roll.no': '10',  'mob.bo': '9898978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt7.insert({'s_id': '2', 'sname': 'vishesh', 'fname': 'rahul','roll.no': '22',  'mob.bo': '9222112334'})
+WriteResult({ "nInserted" : 1 })
+> db.mt7.insert({'s_id': '2', 'sname': 'vikar', 'fname': 'sonu','roll.no': '42',  'mob.bo': '9222112334'})
+WriteResult({ "nInserted" : 1 })
+> db.mt7.insert({'s_id': '1', 'sname': 'virodh', 'fname': 'gandhi','roll.no': '10',  'mob.bo': '9898978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt7.insert({'s_id': '1', 'sname': 'aaakra', 'fname': 'vishnu','roll.no': '20',  'mob.bo': '9898978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt7.insert({'s_id': '1', 'sname': 'aakriti', 'fname': 'vikaral','roll.no': '34',  'mob.bo': '22``1234'})
+WriteResult({ "nInserted" : 1 })
+> db.mt7.insert({'s_id': '1', 'sname': 'vikriti', 'fname': 'rajulal','roll.no': '64',  'mob.bo': '2444`1234'})
+WriteResult({ "nInserted" : 1 })
+> db.mt7.insert({'s_id': '2', 'sname': 'vishesh', 'fname': 'rahul','roll.no': '22',  'mob.bo': '9222112334'})
+WriteResult({ "nInserted" : 1 })
+> db.mt7.insert({'s_id': '5', 'sname': 'ramesh', 'fname': 'ram','roll.no': '92',  'mob.bo': '112112334'})
+WriteResult({ "nInserted" : 1 })
+> db.mt7.insert({'s_id': '1', 'sname': 'virodh', 'fname': 'gandhi','roll.no': '10',  'mob.bo': '9898978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt7.find()
+{ "_id" : ObjectId("61cae31795789e30ae8f79e0"), "s_id" : "1", "sname" : "virodh", "fname" : "gandhi", "roll.no" : "10", "mob.bo" : "9898978434" }
+{ "_id" : ObjectId("61cae46195789e30ae8f79e1"), "s_id" : "2", "sname" : "vishesh", "fname" : "rahul", "roll.no" : "22", "mob.bo" : "9222112334" }
+{ "_id" : ObjectId("61cae47795789e30ae8f79e2"), "s_id" : "2", "sname" : "vikar", "fname" : "sonu", "roll.no" : "42", "mob.bo" : "9222112334" }
+{ "_id" : ObjectId("61cae47a95789e30ae8f79e3"), "s_id" : "1", "sname" : "virodh", "fname" : "gandhi", "roll.no" : "10", "mob.bo" : "9898978434" }
+{ "_id" : ObjectId("61cae48c95789e30ae8f79e4"), "s_id" : "1", "sname" : "aaakra", "fname" : "vishnu", "roll.no" : "20", "mob.bo" : "9898978434" }
+{ "_id" : ObjectId("61cae4a595789e30ae8f79e5"), "s_id" : "1", "sname" : "aakriti", "fname" : "vikaral", "roll.no" : "34", "mob.bo" : "22``1234" }
+{ "_id" : ObjectId("61cae4bf95789e30ae8f79e6"), "s_id" : "1", "sname" : "vikriti", "fname" : "rajulal", "roll.no" : "64", "mob.bo" : "2444`1234" }
+{ "_id" : ObjectId("61cae4c395789e30ae8f79e7"), "s_id" : "2", "sname" : "vishesh", "fname" : "rahul", "roll.no" : "22", "mob.bo" : "9222112334" }
+{ "_id" : ObjectId("61cae4e795789e30ae8f79e8"), "s_id" : "5", "sname" : "ramesh", "fname" : "ram", "roll.no" : "92", "mob.bo" : "112112334" }
+{ "_id" : ObjectId("61cae4eb95789e30ae8f79e9"), "s_id" : "1", "sname" : "virodh", "fname" : "gandhi", "roll.no" : "10", "mob.bo" : "9898978434" }
+> db.mt8.insert({'dep_type': 'housekeeping', 'ename': 'virodh', 'fname': 'mohan','roll': 'management',  'mob.bo': '9898978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt8.insert({'dep_type': 'management', 'ename': 'avishka', 'fname': 'mukul','roll': 'management',  'mob.bo': '9898978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt8.insert({'dep_type': 'development', 'ename': 'viral', 'fname': 'mukund','roll': 'development',  'mob.bo': '978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt8.insert({'dep_type': 'development', 'ename': 'vikrant', 'fname': 'mukund','roll': 'development',  'mob.bo': '978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt8.insert({'dep_type': 'development', 'ename': 'vikash', 'fname': 'prajapati','roll': 'development',  'mob.bo': '978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt8.insert({'dep_type': 'finance', 'ename': 'vikalp', 'fname': 'priyansh','roll': 'development',  'mob.bo': '978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt8.insert({'dep_type': 'development', 'ename': 'vikash', 'fname': 'prajapati','roll': 'development',  'mob.bo': '978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt8.insert({'dep_type': 'housekeeping', 'ename': 'virodh', 'fname': 'mohan','roll': 'management',  'mob.bo': '9898978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt8.insert({'dep_type': 'housekeeping', 'ename': 'rahul', 'fname': 'monu','roll': 'management',  'mob.bo': '9898978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt8.insert({'dep_type': 'development', 'ename': 'vikrant', 'fname': 'mukund','roll': 'development',  'mob.bo': '978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt9.insert({'dep_type': 'development', 'ename': 'vikrant', 'fname': 'mukund','roll': 'development',  'mob.bo': '978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt9.insert({'dep_type': 'software', 'ename': 'rahul', 'fname': 'ram','roll': 'development',  'mob.bo': '978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt9.insert({'dep_type': 'software', 'ename': 'ram', 'fname': 'ramesh','roll': 'development',  'mob.bo': '978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt9.insert({'dep_type': 'software', 'ename': 'phanishwar', 'fname': 'suraj','roll': 'development',  'mob.bo': '9989834'})
+WriteResult({ "nInserted" : 1 })
+> db.mt9.insert({'dep_type': 'software', 'ename': 'vikash', 'fname': 'vishnu','roll': 'development',  'mob.bo': '9989834'})
+WriteResult({ "nInserted" : 1 })
+> db.mt9.insert({'dep_type': 'software', 'ename': 'rahul', 'fname': 'ram','roll': 'development',  'mob.bo': '978434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt9.insert({'dep_type': 'software', 'ename': 'nitin', 'fname': 'ramdev','roll': 'marketing',  'mob.bo': '96478434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt9.insert({'dep_type': 'finance', 'ename': 'nikhiln', 'fname': 'sahdev','roll': 'marketing',  'mob.bo': '96478434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt9.insert({'dep_type': 'finance', 'ename': 'annu', 'fname': 'sahdev','roll': 'marketing',  'mob.bo': '96478434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt9.find()
+{ "_id" : ObjectId("61caea5495789e30ae8f79f4"), "dep_type" : "development", "ename" : "vikrant", "fname" : "mukund", "roll" : "development", "mob.bo" : "978434" }
+{ "_id" : ObjectId("61caea7095789e30ae8f79f5"), "dep_type" : "software", "ename" : "rahul", "fname" : "ram", "roll" : "development", "mob.bo" : "978434" }
+{ "_id" : ObjectId("61caea8495789e30ae8f79f6"), "dep_type" : "software", "ename" : "ram", "fname" : "ramesh", "roll" : "development", "mob.bo" : "978434" }
+{ "_id" : ObjectId("61caea9e95789e30ae8f79f7"), "dep_type" : "software", "ename" : "phanishwar", "fname" : "suraj", "roll" : "development", "mob.bo" : "9989834" }
+{ "_id" : ObjectId("61caeab095789e30ae8f79f8"), "dep_type" : "software", "ename" : "vikash", "fname" : "vishnu", "roll" : "development", "mob.bo" : "9989834" }
+{ "_id" : ObjectId("61caeab395789e30ae8f79f9"), "dep_type" : "software", "ename" : "rahul", "fname" : "ram", "roll" : "development", "mob.bo" : "978434" }
+{ "_id" : ObjectId("61caead295789e30ae8f79fa"), "dep_type" : "software", "ename" : "nitin", "fname" : "ramdev", "roll" : "marketing", "mob.bo" : "96478434" }
+{ "_id" : ObjectId("61caeae895789e30ae8f79fb"), "dep_type" : "finance", "ename" : "nikhiln", "fname" : "sahdev", "roll" : "marketing", "mob.bo" : "96478434" }
+{ "_id" : ObjectId("61caeaf395789e30ae8f79fc"), "dep_type" : "finance", "ename" : "annu", "fname" : "sahdev", "roll" : "marketing", "mob.bo" : "96478434" }
+> db.mt8.find()
+{ "_id" : ObjectId("61cae94a95789e30ae8f79ea"), "dep_type" : "housekeeping", "ename" : "virodh", "fname" : "mohan", "roll" : "management", "mob.bo" : "9898978434" }
+{ "_id" : ObjectId("61cae97295789e30ae8f79eb"), "dep_type" : "management", "ename" : "avishka", "fname" : "mukul", "roll" : "management", "mob.bo" : "9898978434" }
+{ "_id" : ObjectId("61cae99e95789e30ae8f79ec"), "dep_type" : "development", "ename" : "viral", "fname" : "mukund", "roll" : "development", "mob.bo" : "978434" }
+{ "_id" : ObjectId("61cae9b295789e30ae8f79ed"), "dep_type" : "development", "ename" : "vikrant", "fname" : "mukund", "roll" : "development", "mob.bo" : "978434" }
+{ "_id" : ObjectId("61cae9c495789e30ae8f79ee"), "dep_type" : "development", "ename" : "vikash", "fname" : "prajapati", "roll" : "development", "mob.bo" : "978434" }
+{ "_id" : ObjectId("61caea1f95789e30ae8f79ef"), "dep_type" : "finance", "ename" : "vikalp", "fname" : "priyansh", "roll" : "development", "mob.bo" : "978434" }
+{ "_id" : ObjectId("61caea2195789e30ae8f79f0"), "dep_type" : "development", "ename" : "vikash", "fname" : "prajapati", "roll" : "development", "mob.bo" : "978434" }
+{ "_id" : ObjectId("61caea2495789e30ae8f79f1"), "dep_type" : "housekeeping", "ename" : "virodh", "fname" : "mohan", "roll" : "management", "mob.bo" : "9898978434" }
+{ "_id" : ObjectId("61caea4095789e30ae8f79f2"), "dep_type" : "housekeeping", "ename" : "rahul", "fname" : "monu", "roll" : "management", "mob.bo" : "9898978434" }
+{ "_id" : ObjectId("61caea4695789e30ae8f79f3"), "dep_type" : "development", "ename" : "vikrant", "fname" : "mukund", "roll" : "development", "mob.bo" : "978434" }
+> db.mt10.insert({'dep_type': 'finance', 'ename': 'ratan', 'fname': 'vikaram','roll': 'marketing',  'mob.bo': '96478434'})
+^[[AWriteResult({ "nInserted" : 1 })
+> db.mt10.insert({'dep_type': 'management', 'ename': 'bhagwan', 'fname': 'ramesh','roll': 'development',  'mob.bo': '96478434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt10.insert({'dep_type': 'management', 'ename': 'om', 'fname': 'ramesh','roll': 'development',  'mob.bo': '96478434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt10.insert({'dep_type': 'finance', 'ename': 'alok', 'fname': 'mohan,'roll': 'marketing',  'mob.bo': '654645644'})
+2021-12-28T16:18:52.585+0530 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:73
+> db.mt10.insert({'dep_type': 'finance', 'ename': 'alok', 'fname': 'mohan','roll': 'marketing',  'mob.bo': '654645644'})
+WriteResult({ "nInserted" : 1 })
+> db.mt10.insert({'dep_type': 'finance', 'ename': 'ashok', 'fname': 'banwari','roll': 'ghumna',  'mob.bo': '654645644'})
+WriteResult({ "nInserted" : 1 })
+> db.mt10.insert({'dep_type': 'finance', 'ename': 'vinit', 'fname': 'aaditya','roll': 'advartising',  'mob.bo': '654645644'})
+WriteResult({ "nInserted" : 1 })
+> db.mt10.insert({'dep_type': 'management', 'ename': 'bhagwan', 'fname': 'ramesh','roll': 'development',  'mob.bo': '96478434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt10.insert({'dep_type': 'management', 'ename': 'girraj', 'fname': 'manoj','roll': 'development',  'mob.bo': '9998478434'})
+WriteResult({ "nInserted" : 1 })
+> db.mt10.find()
+{ "_id" : ObjectId("61caeb2f95789e30ae8f79fd"), "dep_type" : "finance", "ename" : "ratan", "fname" : "vikaram", "roll" : "marketing", "mob.bo" : "96478434" }
+{ "_id" : ObjectId("61caeb6795789e30ae8f79fe"), "dep_type" : "management", "ename" : "bhagwan", "fname" : "ramesh", "roll" : "development", "mob.bo" : "96478434" }
+{ "_id" : ObjectId("61caeb7495789e30ae8f79ff"), "dep_type" : "management", "ename" : "om", "fname" : "ramesh", "roll" : "development", "mob.bo" : "96478434" }
+{ "_id" : ObjectId("61caebac95789e30ae8f7a00"), "dep_type" : "finance", "ename" : "alok", "fname" : "mohan", "roll" : "marketing", "mob.bo" : "654645644" }
+{ "_id" : ObjectId("61caebcb95789e30ae8f7a01"), "dep_type" : "finance", "ename" : "ashok", "fname" : "banwari", "roll" : "ghumna", "mob.bo" : "654645644" }
+{ "_id" : ObjectId("61caebf295789e30ae8f7a02"), "dep_type" : "finance", "ename" : "vinit", "fname" : "aaditya", "roll" : "advartising", "mob.bo" : "654645644" }
+{ "_id" : ObjectId("61caebf995789e30ae8f7a03"), "dep_type" : "management", "ename" : "bhagwan", "fname" : "ramesh", "roll" : "development", "mob.bo" : "96478434" }
+{ "_id" : ObjectId("61caec1195789e30ae8f7a04"), "dep_type" : "management", "ename" : "girraj", "fname" : "manoj", "roll" : "development", "mob.bo" : "9998478434" }
+> 
+
